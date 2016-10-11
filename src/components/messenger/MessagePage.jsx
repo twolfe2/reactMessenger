@@ -42,7 +42,7 @@ class MessagePage extends Component {
     const { userName, messages } = this.props;
 
     let view = messages.map((message, i) => {
-      if (message.sender === userName) {
+      if (message.sender !== userName) {
         return <div className="row" key={i}><div className="col-xs-6"><TalkBubble message={message.message} person={'sender'} /></div></div>;
       }
       return <div className="row" key={i}><div className="col-xs-offset-8 col-xs-6"><TalkBubble message={message.message} person={'reciever'} /></div></div>;
